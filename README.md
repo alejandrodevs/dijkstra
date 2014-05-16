@@ -1,7 +1,7 @@
 # Dijkstra's Algorithm
 
 ## What's this?
-*Here goes a description*
+My own Dijkstra's Algorithm implementation.
 
 ## Getting Started
 ```
@@ -29,5 +29,9 @@ graph.nodes.link('D', 'C', 10)
 
 graph.dijkstra('A', 'C')
 # Path: ['A', 'D', 'C']
+# Dist: 20
+
+graph.dijkstra('B', 'D')
+# Path: ['B', 'A', 'D']
 # Dist: 20
 ```
