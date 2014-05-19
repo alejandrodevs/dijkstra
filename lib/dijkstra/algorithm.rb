@@ -34,8 +34,10 @@ module Dijkstra
       end
 
       # Returns shortest path and its distance.
-      puts "Path: #{table[des][:path]}"
-      puts "Dist: #{table[des][:distance]}"
+      {
+        path: table[des][:path],
+        distance: table[des][:distance]
+      }
     end
   end
 end
