@@ -37,3 +37,9 @@ graph.dijkstra('B', 'D')
 graph.dijkstra('A', 'E')
 # => { path: [], distance: Float::INFINITY }
 ```
+
+## Testing
+Open up your terminal in the project path and run:
+```
+ruby test/dijkstra.rb
+```
