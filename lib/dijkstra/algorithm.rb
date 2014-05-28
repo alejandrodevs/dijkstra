@@ -1,11 +1,10 @@
 module Dijkstra
   class Algorithm
-    attr_reader :src, :des, :nodes, :table
+    attr_reader :src, :des, :table
 
     def initialize src, des, nodes
       @src   = nodes.find(src)
       @des   = nodes.find(des)
-      @nodes = nodes
       @table = TableHash.new(nodes)
     end
 
@@ -14,10 +13,10 @@ module Dijkstra
       table[src][:distance] = 0
       table[src][:path] << src.name
 
-      while table.unvisited_nodes?
+      while table.unvisited.any?
         # Gets nearest node and its unvisited neighbors.
         current   = table.nearest_node
-        neighbors = table.unvisited_neighbors(current)
+        neighbors = current.neighbors.keys - table.visited.keys
 
         neighbors.each do |neighbor|
           old_distance = table[neighbor][:distance]

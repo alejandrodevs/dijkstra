@@ -18,20 +18,8 @@ module Dijkstra
       select { |node, data| !data[:visited] }
     end
 
-    def unvisited_nodes
-      unvisited.keys
-    end
-
-    def unvisited_nodes?
-      unvisited_nodes.any?
-    end
-
     def nearest_node
       unvisited.min_by { |node, data| data[:distance] }[0]
-    end
-
-    def unvisited_neighbors node
-      node.neighbors.keys - visited.keys
     end
   end
 end
