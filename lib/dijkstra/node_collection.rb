@@ -1,14 +1,14 @@
 module Dijkstra
   class NodeCollection < Array
-    def add name
+    def add(name)
       push(Node.new(name))
     end
 
-    def find name
+    def find(name)
       detect { |node| node.name == name }
     end
 
-    def link a, b, length
+    def edge(a, b, length)
       find(a).neighbors.add(find(b), length)
       find(b).neighbors.add(find(a), length)
     end

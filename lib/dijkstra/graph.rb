@@ -4,7 +4,7 @@ module Dijkstra
       @nodes ||= NodeCollection.new
     end
 
-    def dijkstra src, des
+    def dijkstra(src, des)
       Algorithm.new(src, des, nodes).run!
     end
   end

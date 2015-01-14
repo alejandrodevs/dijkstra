@@ -1,7 +1,6 @@
-require 'minitest/autorun'
-require './dijkstra'
+require 'test_helper'
 
-class TestDijkstra < MiniTest::Unit::TestCase
+class DijkstraTest < Minitest::Test
   def setup
     @graph = Dijkstra::Graph.new
     @graph.nodes.add('A')
